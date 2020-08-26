@@ -1,5 +1,5 @@
 import React from 'react';
-import Clarifai from 'clarifai';
+import Clarifai from 'clarifai'; 
 import Particles from 'react-particles-js';
 import './App.css';
 import Navigation from './components/Navigation/Navigation'
@@ -14,6 +14,8 @@ const app = new Clarifai.App({
   apiKey: '6d7cc47af16c4937bd0368b567b24e12'
  });
 
+ //Particles configuration
+ 
 const particlesOptions = {
   particles: {
     number: {
@@ -30,7 +32,7 @@ class App extends React.Component {
 
   constructor(){
     super();
-    this.state ={
+    this.state = {
       input: '',
       imageUrl: '',
       box: {},
@@ -74,16 +76,16 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
+      <div className = "App">
         <Particles className = 'particles'
-                params={particlesOptions}
-              />       
-        { this.state.route=== 'home'?
+                params = {particlesOptions}
+        />       
+        { this.state.route === 'home' ?
           <div>
           <Navigation onRouteChange = {this.onRouteChange}/>
           <Logo/>
           <Rank />
-          <ImageLinkForm onInputChange ={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+          <ImageLinkForm onInputChange = {this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
           <FaceRecognition box = {this.state.box} imageUrl= {this.state.imageUrl}/>
           </div>:
           (this.state.route === 'signin'?
@@ -91,10 +93,10 @@ class App extends React.Component {
            <Register onRouteChange = {this.onRouteChange}/>
           )
         }
-       
       </div>
     );
   }
 }
 
 export default App;
+
