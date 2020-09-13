@@ -11,7 +11,7 @@ import SignIn from './components/SignIn/SignIn'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 
 const app = new Clarifai.App({
-  apiKey: '6d7cc47af16c4937bd0368b567b24e12'
+  apiKey: 'TOKEN'
  });
 
  //Particles configuration
